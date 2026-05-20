@@ -35,13 +35,13 @@ public class CasoList
             Console.WriteLine("Alumno no encontrado.");
     }
 
-    public void EleiminarEliminarAlumno(Alumno alumno)
+    public void EliminarAlumno(Alumno alumno)
     {
         Alumno coincidencia = alumnos.Find(alu => alu.Nombre == alumno.Nombre);
 
         if (coincidencia != null)
         {
-            alumnos.Remove(alumno);
+            alumnos.Remove(coincidencia);
             Console.WriteLine($"Alumno eliminado: {alumno}");
         }
 

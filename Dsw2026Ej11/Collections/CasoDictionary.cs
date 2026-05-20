@@ -16,10 +16,22 @@ public class CasoDictionary
 
     public void BuscarAlumno(int legajo)
     {
-        foreach (KeyValuePair<int, string> element in claves)
-        {
-            
-        }
+        if (claves.TryGetValue(legajo, out string alumno))
+            Console.WriteLine($"Alumno encontrado: {alumno} con legajo {legajo}");
+        else
+            Console.WriteLine("Alumno no encontrado.");
     }
 
+    public Dictionary<int, string> ObtenerDiccionario()
+    {
+        return claves;
+    }
+
+    public void EliminarAlumno(int legajo)
+    {
+        if (claves.Remove(legajo))
+            Console.WriteLine($"Legajo de alumno eliminado: {legajo}");
+        else
+            Console.WriteLine("Alumno no encontrado.");
+    }
 }
