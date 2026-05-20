@@ -23,7 +23,7 @@ internal class Ejemplos
 
         foreach (var alumno in listaAlumnos)
         {
-            Console.WriteLine($"Legajo: {alumno.Id} - Nombre: {alumno.Nombre} - Promedio: {alumno.Promedio}");
+            Console.WriteLine(alumno.ToString());
         }
 
         lista.BuscarAlumno("Marta");
@@ -34,7 +34,7 @@ internal class Ejemplos
 
         foreach (var alumno in listaAlumnos)
         {
-            Console.WriteLine($"Legajo: {alumno.Id} - Nombre: {alumno.Nombre} - Promedio: {alumno.Promedio}");
+            Console.WriteLine(alumno.ToString());
         }
     }
 
@@ -45,7 +45,28 @@ internal class Ejemplos
     //Eliminar un alumno por clave y listar por consola los alumnos
     public static void EjemploDictionary()
     {
+        CasoDictionary clave = new CasoDictionary();
+        clave.AgregarAlumno(new Alumno(1, "Juan", 8.5));
+        clave.AgregarAlumno(new Alumno(2, "Marta", 9.0));
+        clave.AgregarAlumno(new Alumno(3, "Miguel", 4.5));
 
+        var lista = clave.ObtenerDiccionario();
+
+        foreach (var alumno in lista)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
+
+        clave.BuscarAlumno(1);
+
+        clave.BuscarAlumno(6);
+
+        clave.EliminarAlumno(3);
+
+        foreach(var alumno in lista)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
     }
 
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
