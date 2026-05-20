@@ -1,4 +1,7 @@
-﻿namespace Dsw2026Ej11.Tests;
+﻿using Dsw2026Ej11.Collections;
+using Dsw2026Ej11.Domain;
+
+namespace Dsw2026Ej11.Tests;
 
 
 internal class Ejemplos
@@ -11,7 +14,28 @@ internal class Ejemplos
     //Eliminar el primer elemento de la lista y listar por consola los alumnos
     public static void EjemploList()
     {
+        CasoList lista = new CasoList();
+        lista.AgregarAlumno(new Alumno(1, "Juan", 8.5));
+        lista.AgregarAlumno(new Alumno(2, "Marta", 9.0));
+        lista.AgregarAlumno(new Alumno(3, "Miguel", 4.5));
 
+        var listaAlumnos = lista.ObtenerLista();
+
+        foreach (var alumno in listaAlumnos)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
+
+        lista.BuscarAlumno("Marta");
+
+        lista.EliminarAlumno(new Alumno(0, "Miguel", 0.0));
+
+        lista.EleiminarEliminarAlumnoIndice(0);
+
+        foreach (var alumno in listaAlumnos)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
     }
 
     //Agregar 3 alumnos al diccionario
@@ -21,12 +45,53 @@ internal class Ejemplos
     //Eliminar un alumno por clave y listar por consola los alumnos
     public static void EjemploDictionary()
     {
+        CasoDictionary clave = new CasoDictionary();
+        clave.AgregarAlumno(new Alumno(1, "Juan", 8.5));
+        clave.AgregarAlumno(new Alumno(2, "Marta", 9.0));
+        clave.AgregarAlumno(new Alumno(3, "Miguel", 4.5));
 
+        var lista = clave.ObtenerDiccionario();
+
+        foreach (var alumno in lista)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
+
+        clave.BuscarAlumno(1);
+
+        clave.BuscarAlumno(6);
+
+        clave.EliminarAlumno(3);
+
+        foreach(var alumno in lista)
+        {
+            Console.WriteLine(alumno.ToString());
+        }
     }
 
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
+        CasoLinq listaLibros = new CasoLinq();
 
+        listaLibros.GetPrimero();
+
+        listaLibros.GetUltimo();
+
+        listaLibros.GetTotalPrecios();
+
+        listaLibros.GetPromedioPrecios();
+
+        listaLibros.GetLISTById();
+
+        listaLibros.GetLibros();
+
+        listaLibros.GetMayorPrecio();
+
+        listaLibros.GetMenorPrecio();
+
+        listaLibros.GetMayorPromedio();
+
+        listaLibros.GetLibrosOrdenadosDescendnente();
     }
 }
