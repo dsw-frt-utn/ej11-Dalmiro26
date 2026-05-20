@@ -72,6 +72,26 @@ internal class Ejemplos
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
+        CasoLinq listaLibros = new CasoLinq();
 
+        listaLibros.GetPrimero();
+
+        listaLibros.GetUltimo();
+
+        listaLibros.GetTotalPrecios();
+
+        listaLibros.GetPromedioPrecios();
+
+        listaLibros.GetLISTById();
+
+        listaLibros.GetLibros();
+
+        listaLibros.GetMayorPrecio();
+
+        listaLibros.GetMenorPrecio();
+
+        listaLibros.GetMayorPromedio();
+
+        listaLibros.GetLibrosOrdenadosDescendnente();
     }
 }
